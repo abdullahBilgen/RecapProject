@@ -6,6 +6,8 @@ import com.example.reCapProject.core.utilities.result.DataResult;
 import com.example.reCapProject.core.utilities.result.Result;
 import com.example.reCapProject.entities.concretes.Rental;
 import com.example.reCapProject.entities.request.CreateRentalRequest;
+import com.example.reCapProject.entities.request.DeleteRentalRequest;
+import com.example.reCapProject.entities.request.UpdateRentalRequest;
 
 public interface RentalService {
 	
@@ -15,9 +17,11 @@ public interface RentalService {
 	
 	Result add(CreateRentalRequest createRentalRequest);
 	
-	Result update(Rental rental);
+	Result update(UpdateRentalRequest updateRentalRequest);
 	
-	Result delete(Rental rental);
+	Result delete(DeleteRentalRequest deleteRentalRequest);
+
+	
 
 
 }

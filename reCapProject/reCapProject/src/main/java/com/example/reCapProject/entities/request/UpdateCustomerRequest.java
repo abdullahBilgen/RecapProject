@@ -1,6 +1,5 @@
 package com.example.reCapProject.entities.request;
 
-
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
@@ -9,28 +8,20 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Getter
 @Setter
+@Getter
 @AllArgsConstructor
 @NoArgsConstructor
-public class CreateCustomerRequest {
-	
-	@NotNull
-	@NotBlank
-	private String eMail;
-	
-	@NotNull
-	@NotBlank
-	private String password;
+public class UpdateCustomerRequest {
 	
 	@NotNull
 	private String companyName;
 	
 	@NotNull
-	private String firstName;
+	@NotBlank
+	private String email;
 	
 	@NotNull
-	private String lastName;
-	
-
+	@NotBlank
+	private String password;
 }

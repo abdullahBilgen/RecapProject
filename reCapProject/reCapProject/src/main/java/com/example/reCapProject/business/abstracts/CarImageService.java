@@ -23,6 +23,4 @@ public interface CarImageService {
 
 	Result delete(DeleteCarImageRequest deleteCarImageRequest);
 
-	
-
 }

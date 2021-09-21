@@ -14,6 +14,7 @@ import com.example.reCapProject.core.utilities.result.SuccessResult;
 import com.example.reCapProject.dataAccess.abstracts.ColorDao;
 import com.example.reCapProject.entities.concretes.Color;
 import com.example.reCapProject.entities.request.CreateColorRequest;
+import com.example.reCapProject.entities.request.UpdateColorRequest;
 
 @Service
 public class ColorManager implements ColorService{
@@ -41,7 +42,7 @@ public class ColorManager implements ColorService{
 	@Override
 	public DataResult<List<Color>> getAll() {
 		
-	
+		
 		return new SuccessDataResult<List<Color>>
 		(this.colorDao.findAll(),Messages.GETALL);
 	 
@@ -56,7 +57,11 @@ public class ColorManager implements ColorService{
 
 	
 	@Override
-	public Result update(Color color) {
+	public Result update(UpdateColorRequest updateColorRequest) {
+		
+		Color color = new Color();
+		color.setColorName(updateColorRequest.getColorName());
+		
 		this.colorDao.save(color);
 		return new SuccessResult(Messages.UPDATE);
 		
@@ -67,6 +72,12 @@ public class ColorManager implements ColorService{
 		this.colorDao.delete(color);
 		return new SuccessResult(Messages.DELETE);
 		
+	}
+
+	@Override
+	public DataResult<List<Color>> getByCarId(int carId) {
+		return new SuccessDataResult<List<Color>>
+		(this.colorDao.findAll(),Messages.LIST);
 	}
 	
 

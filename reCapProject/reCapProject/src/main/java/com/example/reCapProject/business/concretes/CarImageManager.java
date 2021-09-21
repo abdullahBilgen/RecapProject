@@ -1,5 +1,6 @@
 package com.example.reCapProject.business.concretes;
 
+
 import java.time.LocalDate;
 import java.util.List;
 import java.util.UUID;
@@ -47,6 +48,7 @@ public class CarImageManager implements CarImageService {
 	public Result add(CreateCarImageRequest createCarImageRequest) {
 
 		var result = BusinessRules.run(checkIfCarImageOverRun(createCarImageRequest.getCarId(), 5));
+		
 		if (result != null) {
 			return result;
 		}
@@ -113,5 +115,4 @@ public class CarImageManager implements CarImageService {
 
 		return new SuccessResult(Messages.SUCCESS);
 	}
-
 }

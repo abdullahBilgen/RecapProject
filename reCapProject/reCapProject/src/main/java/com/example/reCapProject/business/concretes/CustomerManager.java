@@ -7,15 +7,14 @@ import org.springframework.stereotype.Service;
 
 import com.example.reCapProject.business.abstracts.CustomerService;
 import com.example.reCapProject.business.constants.Messages;
-
 import com.example.reCapProject.core.utilities.result.DataResult;
 import com.example.reCapProject.core.utilities.result.Result;
 import com.example.reCapProject.core.utilities.result.SuccessDataResult;
 import com.example.reCapProject.core.utilities.result.SuccessResult;
 import com.example.reCapProject.dataAccess.abstracts.CustomerDao;
 import com.example.reCapProject.entities.concretes.Customer;
-
 import com.example.reCapProject.entities.request.CreateCustomerRequest;
+import com.example.reCapProject.entities.request.UpdateCustomerRequest;
 
 @Service
 public class CustomerManager implements CustomerService {
@@ -44,7 +43,6 @@ public class CustomerManager implements CustomerService {
 	public Result add(CreateCustomerRequest createCustomerRequest) {
 		
 		Customer customer =new Customer();
-		
 		customer.setCompanyName(createCustomerRequest.getCompanyName());
 		customer.setEMail(createCustomerRequest.getEMail());
 		customer.setPassword(createCustomerRequest.getPassword());
@@ -56,7 +54,13 @@ public class CustomerManager implements CustomerService {
 	}
 
 	@Override
-	public Result update(Customer customer) {
+	public Result update(UpdateCustomerRequest updateCustomerRequest) {
+		
+		Customer customer = new Customer();
+		customer.setCompanyName(updateCustomerRequest.getCompanyName());
+		customer.setEMail(updateCustomerRequest.getEmail());
+		customer.setPassword(updateCustomerRequest.getPassword());
+		
 		this.customerDao.save(customer);
 		return new SuccessResult(Messages.UPDATE); 
 		                                

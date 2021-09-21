@@ -65,4 +65,10 @@ public class BrandManager implements BrandService{
 		
 	}
 
+	@Override
+	public DataResult<List<Brand>> getByCarId(int carId) {
+		return new SuccessDataResult<List<Brand>>
+		(this.brandDao.findAll(),Messages.LIST);
+	}
+
 }

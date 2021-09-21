@@ -1,6 +1,5 @@
 package com.example.reCapProject.entities.request;
 
-import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.Size;
 
@@ -13,22 +12,20 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class CreateCarRequest {
-	
-	
+public class UpdateCarRequest {
+
 	private String carName;
-	
-	@Min(2000)
+
+	@Min(1900)
 	private int modelYear;
-	
-	@Max(50000)
+
+	@Min(0)
 	private double dailyPrice;
-	
-	@Size(max=100)
+
+	@Size(max = 200)
 	private String description;
 
-	
 	private int brandId;
-	private int colorId;
 
+	private int colorId;
 }

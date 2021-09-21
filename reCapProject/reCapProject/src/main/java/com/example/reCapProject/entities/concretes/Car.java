@@ -34,7 +34,7 @@ public class Car {
 	private String carName;
 	
 	@Column(name="model_year")
-	private String modelYear;
+	private int modelYear;
 	
 	@Column(name="daily_price")
 	private double dailyPrice;
@@ -53,5 +53,8 @@ public class Car {
 	@JsonIgnore
 	@OneToMany(mappedBy="car")
 	private List<Rental> rentals;
+	
+	@OneToMany(mappedBy="car")
+    private List<CarImage> carImages;
 	
 }

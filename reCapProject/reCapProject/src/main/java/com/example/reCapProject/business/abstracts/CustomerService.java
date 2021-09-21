@@ -6,6 +6,7 @@ import com.example.reCapProject.core.utilities.result.DataResult;
 import com.example.reCapProject.core.utilities.result.Result;
 import com.example.reCapProject.entities.concretes.Customer;
 import com.example.reCapProject.entities.request.CreateCustomerRequest;
+import com.example.reCapProject.entities.request.UpdateCustomerRequest;
 
 public interface CustomerService {
 	
@@ -15,7 +16,7 @@ public interface CustomerService {
 	
 	Result add(CreateCustomerRequest createCustomerRequest);
 	
-	Result update(Customer customer);
+	Result update(UpdateCustomerRequest updateCustomerRequest);
 	
 	Result delete(Customer customer);
 

@@ -1,5 +1,6 @@
 package com.example.reCapProject.entities.request;
 
+import java.util.Date;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -13,24 +14,18 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class CreateCustomerRequest {
-	
-	@NotNull
-	@NotBlank
-	private String eMail;
-	
-	@NotNull
-	@NotBlank
-	private String password;
-	
-	@NotNull
-	private String companyName;
-	
-	@NotNull
-	private String firstName;
-	
-	@NotNull
-	private String lastName;
-	
+public class UpdateRentalRequest {
 
+	@NotNull
+	@NotBlank
+	private Date rentDate;
+	
+	private Date returnDate;
+	
+	@NotNull
+	private int carId;
+	
+	private int customerId;
+	
+	private boolean rentStatus;
 }

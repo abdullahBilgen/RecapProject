@@ -10,7 +10,6 @@ import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
-import com.example.reCapProject.core.entities.concretes.User;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -27,7 +26,8 @@ import lombok.NoArgsConstructor;
 @JsonIgnoreProperties({ "hibernateLazyInitializer", "handler","rentals"})
 @Table(name="customers")
 @PrimaryKeyJoinColumn(name="user_id")
-public class Customer extends User {
+
+public class Customer extends ApplicationUser {
 	
 	@Column(name="company_name")
 	private String companyName;
@@ -35,4 +35,8 @@ public class Customer extends User {
     @JsonIgnore
     @OneToMany(mappedBy="customer")
     private List<Rental> rentals;
+    
+   
+    
+
 }

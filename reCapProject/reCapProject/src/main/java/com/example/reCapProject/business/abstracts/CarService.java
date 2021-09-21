@@ -7,6 +7,8 @@ import com.example.reCapProject.core.utilities.result.Result;
 import com.example.reCapProject.entities.concretes.Car;
 import com.example.reCapProject.entities.dtos.CarDetailDto;
 import com.example.reCapProject.entities.request.CreateCarRequest;
+import com.example.reCapProject.entities.request.UpdateCarRequest;
+
 
 public interface CarService  {
 	
@@ -16,14 +18,18 @@ public interface CarService  {
 	DataResult<Car> getById(int carId);
 	
 	DataResult<List<CarDetailDto>> getCarWithDetails();
+
+	DataResult<List<Car>> getByBrandName(String brandName);
+	
+	DataResult<List<Car>> getByColorName(String colorName);
 	
 	Result add(CreateCarRequest createCarRequest);
 	
-	Result update(Car car);
+	Result update(UpdateCarRequest updateCarRequest);
 	
 	Result delete(Car car);
 	
-	
+
 
 
 

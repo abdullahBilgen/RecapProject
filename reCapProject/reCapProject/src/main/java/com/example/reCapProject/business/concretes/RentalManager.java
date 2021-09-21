@@ -18,6 +18,8 @@ import com.example.reCapProject.entities.concretes.Car;
 import com.example.reCapProject.entities.concretes.Customer;
 import com.example.reCapProject.entities.concretes.Rental;
 import com.example.reCapProject.entities.request.CreateRentalRequest;
+import com.example.reCapProject.entities.request.DeleteRentalRequest;
+import com.example.reCapProject.entities.request.UpdateRentalRequest;
 
 @Service
 public class RentalManager implements RentalService {
@@ -49,6 +51,7 @@ public class RentalManager implements RentalService {
 			return result;
 		}
 
+
 		Car car = new Car();
 		car.setCarId(createRentalRequest.getCarId());
 
@@ -57,26 +60,54 @@ public class RentalManager implements RentalService {
 
 		Rental rental = new Rental();
 		rental.setRentDate(createRentalRequest.getRentDate());
-		rental.setReturnDate(createRentalRequest.getReturnDate());
-		rental.setCar(car);
-		rental.setCustomer(customer);
-		rental.setReturnRentControl(createRentalRequest.isReturnRentControl());
 		
 		rental.setCar(car);
 		rental.setCustomer(customer);
-	
+		
+		
+		rental.setCar(car);
+		rental.setCustomer(customer);
+		
 		this.rentalDao.save(rental);
 		return new SuccessResult(Messages.ADD);
 	}
 
 	@Override
-	public Result update(Rental rental) {
+	public Result update(UpdateRentalRequest updateRentalRequest) {
+		
+		Car car = new Car();
+		car.setCarId(updateRentalRequest.getCarId());
+		
+		Customer customer = new Customer();
+		customer.setUserId(updateRentalRequest.getCustomerId());
+		
+		Rental rental = new Rental();
+		rental.setRentDate(updateRentalRequest.getRentDate());
+		rental.setReturnDate(updateRentalRequest.getReturnDate());
+		rental.setCar(car);
+		rental.setCustomer(customer);
+		rental.setReturnRentControl(updateRentalRequest.isRentStatus());
+		
 		this.rentalDao.save(rental);
 		return new SuccessResult(Messages.UPDATE);
 	}
 
 	@Override
-	public Result delete(Rental rental) {
+	public Result delete(DeleteRentalRequest deleteRentalRequest) {
+		
+		Car car = new Car();
+		car.setCarId(deleteRentalRequest.getCarId());
+		
+		Customer customer = new Customer();
+		customer.setUserId(deleteRentalRequest.getCustomerId());
+		
+		Rental rental = new Rental();
+		rental.setRentDate(deleteRentalRequest.getRentDate());
+		rental.setReturnDate(deleteRentalRequest.getReturnDate());
+		rental.setCar(car);
+		rental.setCustomer(customer);
+		rental.setReturnRentControl(deleteRentalRequest.isRentStatus());
+		
 		this.rentalDao.delete(rental);
 		return new SuccessResult(Messages.DELETE);
 	}
