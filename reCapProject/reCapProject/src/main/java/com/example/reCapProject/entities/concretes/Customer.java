@@ -1,12 +1,10 @@
 package com.example.reCapProject.entities.concretes;
 
-
 import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
-
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
@@ -32,11 +30,10 @@ public class Customer extends ApplicationUser {
 	@Column(name="company_name")
 	private String companyName;
 	
+	@Column(name="customer_findeks")
+	private int customerFindeks;
+	
     @JsonIgnore
     @OneToMany(mappedBy="customer")
     private List<Rental> rentals;
-    
-   
-    
-
 }

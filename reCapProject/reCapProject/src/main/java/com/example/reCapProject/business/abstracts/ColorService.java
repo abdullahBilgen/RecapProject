@@ -5,8 +5,9 @@ import java.util.List;
 import com.example.reCapProject.core.utilities.result.DataResult;
 import com.example.reCapProject.core.utilities.result.Result;
 import com.example.reCapProject.entities.concretes.Color;
-import com.example.reCapProject.entities.request.CreateColorRequest;
-import com.example.reCapProject.entities.request.UpdateColorRequest;
+import com.example.reCapProject.entities.request.create.CreateColorRequest;
+import com.example.reCapProject.entities.request.delete.DeleteColorRequest;
+import com.example.reCapProject.entities.request.update.UpdateColorRequest;
 
 public interface ColorService {
 	
@@ -19,8 +20,7 @@ public interface ColorService {
 	Result add(CreateColorRequest createColorRequest);
 	
 	Result update(UpdateColorRequest updateColorRequest);
-	
-	Result delete(Color color);
 
+	Result delete(DeleteColorRequest deleteColorRequest);
 }
  

@@ -13,13 +13,13 @@ import com.example.reCapProject.core.utilities.result.SuccessDataResult;
 import com.example.reCapProject.core.utilities.result.SuccessResult;
 import com.example.reCapProject.dataAccess.abstracts.ColorDao;
 import com.example.reCapProject.entities.concretes.Color;
-import com.example.reCapProject.entities.request.CreateColorRequest;
-import com.example.reCapProject.entities.request.UpdateColorRequest;
+import com.example.reCapProject.entities.request.create.CreateColorRequest;
+import com.example.reCapProject.entities.request.delete.DeleteColorRequest;
+import com.example.reCapProject.entities.request.update.UpdateColorRequest;
 
 @Service
 public class ColorManager implements ColorService{
 	
-
 	private ColorDao colorDao;
 	
 	@Autowired
@@ -30,55 +30,46 @@ public class ColorManager implements ColorService{
 
 	@Override
 	public Result add(CreateColorRequest createColorRequest) {
-		
 		Color color=new Color();
 		color.setColorName(createColorRequest.getColorName());
 		
 		this.colorDao.save(color);
-		return new SuccessResult(Messages.ADD);
-		
+		return new SuccessResult(Messages.COLORADD);	
 	}
 
 	@Override
 	public DataResult<List<Color>> getAll() {
-		
-		
 		return new SuccessDataResult<List<Color>>
 		(this.colorDao.findAll(),Messages.GETALL);
-	 
 	}
 
 	@Override
 	public DataResult<Color> getById(int colorId) {
 		return new SuccessDataResult<Color> 
 		(this.colorDao.getById(colorId),Messages.GETID);
-	
 	}
 
-	
 	@Override
 	public Result update(UpdateColorRequest updateColorRequest) {
-		
 		Color color = new Color();
 		color.setColorName(updateColorRequest.getColorName());
 		
 		this.colorDao.save(color);
-		return new SuccessResult(Messages.UPDATE);
-		
-	}
-
-	@Override
-	public Result delete(Color color) {
-		this.colorDao.delete(color);
-		return new SuccessResult(Messages.DELETE);
-		
+		return new SuccessResult(Messages.COLORUPDATE);
 	}
 
 	@Override
 	public DataResult<List<Color>> getByCarId(int carId) {
 		return new SuccessDataResult<List<Color>>
-		(this.colorDao.findAll(),Messages.LIST);
+		(this.colorDao.findAll(),Messages.COLORLIST);
 	}
 	
+	@Override
+    public Result delete(DeleteColorRequest deleteColorRequest) {
+        Color color = new Color();
+        color.setColorId(this.colorDao.getByColorName(deleteColorRequest.getColorName()).getColorId());
 
+        this.colorDao.deleteById(color.getColorId());
+        return new SuccessResult(Messages.COLORDELETE);
+    }
 }

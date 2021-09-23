@@ -7,5 +7,4 @@ import com.example.reCapProject.entities.concretes.Color;
 public interface ColorDao extends JpaRepository<Color,Integer> {
 
 	Color getByColorName(String colorName);
-	
 }

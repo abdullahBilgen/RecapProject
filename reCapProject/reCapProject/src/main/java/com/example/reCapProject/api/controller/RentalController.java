@@ -15,7 +15,7 @@ import com.example.reCapProject.business.abstracts.RentalService;
 import com.example.reCapProject.core.utilities.result.DataResult;
 import com.example.reCapProject.core.utilities.result.Result;
 import com.example.reCapProject.entities.concretes.Rental;
-import com.example.reCapProject.entities.request.CreateRentalRequest;
+import com.example.reCapProject.entities.request.create.CreateRentalRequest;
 
 @RestController
 @RequestMapping("api/rentals")
@@ -43,8 +43,4 @@ public class RentalController {
 	public DataResult<Rental> getById(int rentalId) {
 		return this.rentalService.getById(rentalId);
 	}
-
-	
-
-
 }

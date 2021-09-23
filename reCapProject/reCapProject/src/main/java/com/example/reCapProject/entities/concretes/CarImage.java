@@ -34,6 +34,7 @@ public class CarImage {
 	@Column(name="image_path")
 	private String imagePath;
 	
+	
 	@Column(name="date")
 	private LocalDate date;
 	
@@ -41,5 +42,4 @@ public class CarImage {
 	@ManyToOne
 	@JoinColumn(name="car_id")
 	private Car car;
-	
 }

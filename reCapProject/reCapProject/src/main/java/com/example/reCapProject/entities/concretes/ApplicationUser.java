@@ -18,9 +18,6 @@ import lombok.EqualsAndHashCode;
 public class ApplicationUser extends User{
 	
 	private int userId;
-	
 	private String firstName;
 	private String lastName;
-	
-
 }

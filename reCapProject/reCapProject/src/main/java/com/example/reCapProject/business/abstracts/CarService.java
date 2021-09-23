@@ -6,12 +6,11 @@ import com.example.reCapProject.core.utilities.result.DataResult;
 import com.example.reCapProject.core.utilities.result.Result;
 import com.example.reCapProject.entities.concretes.Car;
 import com.example.reCapProject.entities.dtos.CarDetailDto;
-import com.example.reCapProject.entities.request.CreateCarRequest;
-import com.example.reCapProject.entities.request.UpdateCarRequest;
-
+import com.example.reCapProject.entities.request.create.CreateCarRequest;
+import com.example.reCapProject.entities.request.delete.DeleteCarRequest;
+import com.example.reCapProject.entities.request.update.UpdateCarRequest;
 
 public interface CarService  {
-	
 	
 	DataResult<List<Car>> getAll();
 	
@@ -27,10 +26,5 @@ public interface CarService  {
 	
 	Result update(UpdateCarRequest updateCarRequest);
 	
-	Result delete(Car car);
-	
-
-
-
-
+	Result delete(DeleteCarRequest deleteCarRequest);
 }

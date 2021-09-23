@@ -15,8 +15,8 @@ import com.example.reCapProject.business.abstracts.CustomerService;
 import com.example.reCapProject.core.utilities.result.DataResult;
 import com.example.reCapProject.core.utilities.result.Result;
 import com.example.reCapProject.entities.concretes.Customer;
-import com.example.reCapProject.entities.request.CreateCustomerRequest;
-import com.example.reCapProject.entities.request.UpdateCustomerRequest;
+import com.example.reCapProject.entities.request.create.CreateCustomerRequest;
+import com.example.reCapProject.entities.request.update.UpdateCustomerRequest;
 
 @RestController
 @RequestMapping("api/customers")
@@ -53,7 +53,4 @@ public class CustomerController {
 	public Result delete(Customer customer) {
 		return this.customerService.delete(customer);
 	}
-
-	
-
 }

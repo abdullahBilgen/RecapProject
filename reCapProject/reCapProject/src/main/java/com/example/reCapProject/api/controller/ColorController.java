@@ -16,11 +16,12 @@ import com.example.reCapProject.business.abstracts.ColorService;
 import com.example.reCapProject.core.utilities.result.DataResult;
 import com.example.reCapProject.core.utilities.result.Result;
 import com.example.reCapProject.entities.concretes.Color;
-import com.example.reCapProject.entities.request.CreateColorRequest;
-import com.example.reCapProject.entities.request.UpdateColorRequest;
+import com.example.reCapProject.entities.request.create.CreateColorRequest;
+import com.example.reCapProject.entities.request.delete.DeleteColorRequest;
+import com.example.reCapProject.entities.request.update.UpdateColorRequest;
 
 @RestController
-@RequestMapping
+@RequestMapping("api/colors")
 public class ColorController {
 
 	ColorService colorService;
@@ -52,8 +53,7 @@ public class ColorController {
 	}
 
 	@PutMapping("delete")
-	public Result delete(Color color) {
-		return this.colorService.delete(color);
+	public Result delete(@Valid @RequestBody DeleteColorRequest deleteColorRequest) {
+		return this.colorService.delete(deleteColorRequest);
 	}
-
 }

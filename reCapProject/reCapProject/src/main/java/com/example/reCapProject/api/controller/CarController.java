@@ -18,8 +18,9 @@ import com.example.reCapProject.core.utilities.result.DataResult;
 import com.example.reCapProject.core.utilities.result.Result;
 import com.example.reCapProject.entities.concretes.Car;
 import com.example.reCapProject.entities.dtos.CarDetailDto;
-import com.example.reCapProject.entities.request.CreateCarRequest;
-import com.example.reCapProject.entities.request.UpdateCarRequest;
+import com.example.reCapProject.entities.request.create.CreateCarRequest;
+import com.example.reCapProject.entities.request.delete.DeleteCarRequest;
+import com.example.reCapProject.entities.request.update.UpdateCarRequest;
 
 @RestController
 @RequestMapping("api/cars")
@@ -48,20 +49,19 @@ public class CarController {
 		return this.carService.add(createCarRequest);
 	}
 	
-	
 	@GetMapping("/getcarwithdetails")
 	public DataResult<List<CarDetailDto>>getCarWithDetails() {
 		return this.carService.getCarWithDetails();
 	}
 	
 	@PostMapping("update")
-	public Result update(@Valid @ RequestBody UpdateCarRequest updateCarRequest) {
+	public Result update(@Valid @RequestBody UpdateCarRequest updateCarRequest) {
 		return this.carService.update(updateCarRequest);
 	}
 
 	@PutMapping("delete")
-	public Result delete(Car car) {
-		return this.carService.delete(car);
+	public Result delete(DeleteCarRequest deleteCarRequest) {
+		return this.carService.delete(deleteCarRequest);
 	}
 	
 	@GetMapping("/getbybrandname")
@@ -71,10 +71,6 @@ public class CarController {
 	
 	@GetMapping("/getbycolorname")
 	public DataResult<List<Car>> getByColorName(String colorName){
-		return this.carService.getByColorName(colorName);
-		
+		return this.carService.getByColorName(colorName);	
 	}
-	
-	
-
 }

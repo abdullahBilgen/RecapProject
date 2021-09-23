@@ -41,10 +41,13 @@ public class Car {
 	
 	@Column(name="description")
 	private String description;
-
+	
 	@ManyToOne
 	@JoinColumn(name = "brand_id")
 	private Brand brand;
+
+	@Column(name="car_findeks")
+	private int carFindeks;
 
 	@ManyToOne
 	@JoinColumn(name = "color_id")
@@ -56,5 +59,4 @@ public class Car {
 	
 	@OneToMany(mappedBy="car")
     private List<CarImage> carImages;
-	
 }

@@ -13,8 +13,8 @@ import com.example.reCapProject.core.utilities.result.SuccessDataResult;
 import com.example.reCapProject.core.utilities.result.SuccessResult;
 import com.example.reCapProject.dataAccess.abstracts.CustomerDao;
 import com.example.reCapProject.entities.concretes.Customer;
-import com.example.reCapProject.entities.request.CreateCustomerRequest;
-import com.example.reCapProject.entities.request.UpdateCustomerRequest;
+import com.example.reCapProject.entities.request.create.CreateCustomerRequest;
+import com.example.reCapProject.entities.request.update.UpdateCustomerRequest;
 
 @Service
 public class CustomerManager implements CustomerService {
@@ -48,9 +48,10 @@ public class CustomerManager implements CustomerService {
 		customer.setPassword(createCustomerRequest.getPassword());
 		customer.setFirstName(createCustomerRequest.getFirstName());
 		customer.setLastName(createCustomerRequest.getLastName());
+		customer.setCustomerFindeks(createCustomerRequest.getCustomerFindeks());
 		
 		this.customerDao.save(customer);  
-		return new SuccessResult(Messages.ADD);  
+		return new SuccessResult(Messages.CUSTOMERADD);  
 	}
 
 	@Override
@@ -62,15 +63,12 @@ public class CustomerManager implements CustomerService {
 		customer.setPassword(updateCustomerRequest.getPassword());
 		
 		this.customerDao.save(customer);
-		return new SuccessResult(Messages.UPDATE); 
-		                                
+		return new SuccessResult(Messages.CUSTOMERUPDATE);                              
 	}
 
 	@Override
 	public Result delete(Customer customer) {
 		this.customerDao.delete(customer);  
-		return new SuccessResult(Messages.DELETE); 
-		                            
-	}
-
+		return new SuccessResult(Messages.CUSTOMERDELETE);  
+	}	
 }

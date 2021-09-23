@@ -37,6 +37,4 @@ public class Brand {
 	@JsonIgnore
 	@OneToMany(mappedBy = "brand")
 	private List<Car> cars;
-	
-
 }

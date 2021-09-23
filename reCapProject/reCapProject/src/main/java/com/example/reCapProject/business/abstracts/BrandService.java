@@ -5,8 +5,9 @@ import java.util.List;
 import com.example.reCapProject.core.utilities.result.DataResult;
 import com.example.reCapProject.core.utilities.result.Result;
 import com.example.reCapProject.entities.concretes.Brand;
-import com.example.reCapProject.entities.request.CreateBrandRequest;
-
+import com.example.reCapProject.entities.request.create.CreateBrandRequest;
+import com.example.reCapProject.entities.request.delete.DeleteBrandRequest;
+import com.example.reCapProject.entities.request.update.UpdateBrandRequest;
 
 public interface BrandService {
 	
@@ -18,11 +19,7 @@ public interface BrandService {
 	
 	Result add(CreateBrandRequest createBrandRequest);
 	
-	Result update(Brand brand);
+	Result update(UpdateBrandRequest updateBrandRequest);
 	
-	Result delete(Brand brand);
-	
-
-	
-
+	Result delete(DeleteBrandRequest deleteBrandRequest);
 }

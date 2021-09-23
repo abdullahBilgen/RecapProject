@@ -8,7 +8,6 @@ import org.springframework.data.jpa.repository.Query;
 import com.example.reCapProject.entities.concretes.Car;
 import com.example.reCapProject.entities.dtos.CarDetailDto;
 
-
 public interface CarDao extends JpaRepository<Car, Integer> {
 
 	@Query("Select new com.example.reCapProject.entities.dtos.CarDetailDto"	
@@ -22,7 +21,9 @@ public interface CarDao extends JpaRepository<Car, Integer> {
 	
 	List<Car> getByColor_ColorName(String colorName);
 
-	List<Car> getByCarName(String carName);
-
+	Car getByCarName(String carName);
+	
+	@Query ("SELECT c.carFindeks FROM Car c WHERE carId=:carId")
+	int getFindeksPointByCar_CarId(int carId);
 }
 

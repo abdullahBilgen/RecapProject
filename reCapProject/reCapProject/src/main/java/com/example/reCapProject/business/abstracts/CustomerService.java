@@ -5,8 +5,8 @@ import java.util.List;
 import com.example.reCapProject.core.utilities.result.DataResult;
 import com.example.reCapProject.core.utilities.result.Result;
 import com.example.reCapProject.entities.concretes.Customer;
-import com.example.reCapProject.entities.request.CreateCustomerRequest;
-import com.example.reCapProject.entities.request.UpdateCustomerRequest;
+import com.example.reCapProject.entities.request.create.CreateCustomerRequest;
+import com.example.reCapProject.entities.request.update.UpdateCustomerRequest;
 
 public interface CustomerService {
 	
@@ -19,5 +19,4 @@ public interface CustomerService {
 	Result update(UpdateCustomerRequest updateCustomerRequest);
 	
 	Result delete(Customer customer);
-
 }
