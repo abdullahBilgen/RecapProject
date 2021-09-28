@@ -2,6 +2,7 @@ package com.example.reCapProject.entities.concretes;
 
 import java.util.List;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,6 +12,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.NotFound;
+import org.hibernate.annotations.NotFoundAction;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -36,12 +40,19 @@ public class Car {
 	@Column(name="model_year")
 	private int modelYear;
 	
+	@Column(name="city")
+	private String city;
+	
 	@Column(name="daily_price")
 	private double dailyPrice;
 	
 	@Column(name="description")
 	private String description;
 	
+	@Column(name = "car_list_control",columnDefinition = "boolean default false")
+	private boolean carListControl;
+	
+
 	@ManyToOne
 	@JoinColumn(name = "brand_id")
 	private Brand brand;
@@ -59,4 +70,10 @@ public class Car {
 	
 	@OneToMany(mappedBy="car")
     private List<CarImage> carImages;
+	
+	@OneToMany(mappedBy="car")
+    private List<CarRepair> carRepair;
+	
+	
+	
 }

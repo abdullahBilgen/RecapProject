@@ -16,7 +16,9 @@ import com.example.reCapProject.business.abstracts.BrandService;
 import com.example.reCapProject.core.utilities.result.DataResult;
 import com.example.reCapProject.core.utilities.result.Result;
 import com.example.reCapProject.entities.concretes.Brand;
-import com.example.reCapProject.entities.request.CreateBrandRequest;
+import com.example.reCapProject.entities.request.create.CreateBrandRequest;
+import com.example.reCapProject.entities.request.delete.DeleteBrandRequest;
+import com.example.reCapProject.entities.request.update.UpdateBrandRequest;
 
 @RestController
 @RequestMapping("api/brands")
@@ -46,13 +48,13 @@ public class BrandsController {
 	}
 
 	@PostMapping("update")
-	public Result update(Brand brand) {
-		return this.brandService.update(brand);
+	public Result update(UpdateBrandRequest updateBrandRequest) {
+		return this.brandService.update(updateBrandRequest);
 	}
 
 	@PutMapping("delete")
-	public Result delete(Brand brand) {
-		return this.brandService.delete(brand);
+	public Result delete(DeleteBrandRequest deleteBrandRequest) {
+		return this.brandService.delete(deleteBrandRequest);
 	}
 
 }

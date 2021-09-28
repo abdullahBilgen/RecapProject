@@ -1,5 +1,7 @@
 package com.example.reCapProject.entities.request.create;
 
+import java.util.Date;
+
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
@@ -24,5 +26,10 @@ public class CreateCreditCardRequest {
 	@NotBlank (message="Kartınızın arkasında bulunan 3 haneli cvc numarasını giriniz.")
 	private String cvc;
 	
+	@NotNull
+	private Date pullDate;
+	
 	private int customerId;
+	
+
 }

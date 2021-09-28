@@ -14,7 +14,8 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CreateCarRequest {
-
+	
+	
 	private String carName;
 	
 	@Min(2000)
@@ -23,13 +24,16 @@ public class CreateCarRequest {
 	@Max(50000)
 	private double dailyPrice;
 	
+	private String city;
 	@Size(max=100)
 	private String description;
 	
 	@Max(1900)
 	@Min(0)
 	private int carFindeks;
+
 	
 	private int brandId;
 	private int colorId;
+
 }

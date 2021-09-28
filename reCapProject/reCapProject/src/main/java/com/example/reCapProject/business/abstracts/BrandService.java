@@ -9,6 +9,7 @@ import com.example.reCapProject.entities.request.create.CreateBrandRequest;
 import com.example.reCapProject.entities.request.delete.DeleteBrandRequest;
 import com.example.reCapProject.entities.request.update.UpdateBrandRequest;
 
+
 public interface BrandService {
 	
 	DataResult<List<Brand>> getAll();
@@ -17,9 +18,14 @@ public interface BrandService {
 
 	DataResult<List<Brand>> getByCarId(int carId);
 	
+	
 	Result add(CreateBrandRequest createBrandRequest);
 	
 	Result update(UpdateBrandRequest updateBrandRequest);
 	
 	Result delete(DeleteBrandRequest deleteBrandRequest);
+	
+
+	
+
 }

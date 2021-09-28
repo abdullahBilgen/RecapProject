@@ -13,8 +13,9 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CreateColorRequest {
-	
+
 	@NotNull
 	@NotBlank
 	private String colorName;
+	
 }

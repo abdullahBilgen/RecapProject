@@ -1,8 +1,8 @@
 package com.example.reCapProject.entities.concretes;
 
+
 import java.util.List;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.PrimaryKeyJoinColumn;
@@ -23,17 +23,25 @@ import lombok.NoArgsConstructor;
 @Entity
 @JsonIgnoreProperties({ "hibernateLazyInitializer", "handler","rentals"})
 @Table(name="customers")
-@PrimaryKeyJoinColumn(name="user_id")
+//@PrimaryKeyJoinColumn(name="user_id")
 
 public class Customer extends ApplicationUser {
 	
-	@Column(name="company_name")
-	private String companyName;
 	
-	@Column(name="customer_findeks")
-	private int customerFindeks;
+	@JsonIgnore
+	@OneToMany(mappedBy="customer")
+	private List<CreditCard> creditCards;
 	
     @JsonIgnore
     @OneToMany(mappedBy="customer")
     private List<Rental> rentals;
+    
+    @JsonIgnore
+    @OneToMany(mappedBy = "customer")
+    private List<Invoice> invoices;
+    
+
+   
+    
+
 }

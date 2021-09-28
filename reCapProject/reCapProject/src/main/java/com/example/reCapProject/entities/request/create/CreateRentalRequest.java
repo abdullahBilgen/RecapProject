@@ -3,7 +3,6 @@ package com.example.reCapProject.entities.request.create;
 import java.util.Date;
 
 
-import javax.validation.constraints.NotNull;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -14,14 +13,23 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+
 public class CreateRentalRequest  {
 	
-    @NotNull
+	
+	
+	private String pickUpCity;
+	
+	private String deliveryCity;
+
     private Date rentDate;
-    
+   
     private Date returnDate;
-    
-    private boolean returnRentControl;
+    private boolean returnStatus;
+   
     private int carId;
     private int customerId;
+  
+	
+
 }

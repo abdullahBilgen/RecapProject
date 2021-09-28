@@ -9,7 +9,11 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+
 public class DeleteCarRequest {
 	
-	private String carName;
+	private int carId;
+
+
+
 }

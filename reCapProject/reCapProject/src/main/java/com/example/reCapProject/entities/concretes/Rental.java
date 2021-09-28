@@ -9,8 +9,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import lombok.AllArgsConstructor;
@@ -30,14 +32,26 @@ public class Rental {
 	@Column(name="rental_id")
 	private int rentalId;
 	
-	@Column(name = "return_rent_control",columnDefinition = "boolean default false")
-	private boolean returnRentControl;
+	@Column(name = "returnStatus", columnDefinition = "boolean default true")
+	private boolean returnStatus;
 	
 	@Column(name="rent_date")
 	private Date rentDate;
 	
 	@Column(name="return_date")
 	private Date returnDate;
+	
+	@Column(name="pick_up_city")
+	private String pickUpCity;
+	
+	@Column(name="delivery_city")
+	private String deliveryCity;
+
+	
+	@JsonIgnore
+	@OneToOne
+	@JoinColumn(name="invoice_id")
+	private Invoice invoice;
 	
 	@ManyToOne
     @JoinColumn(name="car_id")
@@ -46,4 +60,11 @@ public class Rental {
     @ManyToOne
     @JoinColumn(name="customer_id")
     private Customer customer;
-}
+    
+    
+    
+ 
+	
+		
+	}
+

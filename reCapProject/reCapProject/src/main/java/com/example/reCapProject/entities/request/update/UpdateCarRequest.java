@@ -18,7 +18,8 @@ public class UpdateCarRequest {
 
 	@Min(1900)
 	private int modelYear;
-
+	
+	private String city;
 	@Min(0)
 	private double dailyPrice;
 
@@ -29,4 +30,6 @@ public class UpdateCarRequest {
 	private int brandId;
 
 	private int colorId;
+	
+	
 }

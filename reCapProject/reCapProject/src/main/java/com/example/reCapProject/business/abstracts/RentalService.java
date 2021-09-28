@@ -2,11 +2,13 @@ package com.example.reCapProject.business.abstracts;
 
 import java.util.List;
 
+
+
 import com.example.reCapProject.core.utilities.result.DataResult;
 import com.example.reCapProject.core.utilities.result.Result;
 import com.example.reCapProject.entities.concretes.Rental;
 import com.example.reCapProject.entities.request.create.CreateRentalRequest;
-import com.example.reCapProject.entities.request.delete.DeleteRentalRequest;
+
 import com.example.reCapProject.entities.request.update.UpdateRentalRequest;
 
 public interface RentalService {
@@ -15,9 +17,22 @@ public interface RentalService {
 	
 	DataResult<Rental> getById(int rentalId);
 	
-	Result add(CreateRentalRequest createRentalRequest);
+	Result addCorporateCustomer(CreateRentalRequest createRentalRequest);
+	Result addIndividualCustomer(CreateRentalRequest createRentalRequest);
 	
-	Result update(UpdateRentalRequest updateRentalRequest);
+	Result updateCorporateCustomer(UpdateRentalRequest updateRentalRequest);
+	Result updateIndividualCustomer(UpdateRentalRequest updateRentalRequest);
 	
-	Result delete(DeleteRentalRequest deleteRentalRequest);
+	
+
+
+	
+	
+	
+	
+	
+
+	
+
+
 }

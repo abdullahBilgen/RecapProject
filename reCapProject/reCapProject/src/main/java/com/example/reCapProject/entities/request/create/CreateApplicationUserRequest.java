@@ -6,23 +6,28 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class CreateApplicationUserRequest {
+ 
 
 	@NotNull
 	@NotBlank
 	private String firstName;
+	
 
 	@NotNull
 	@NotBlank
 	private String lastName;
+	
 
 	@NotNull
 	@NotBlank
-	private String eMail;
+	private String email;
 	
+
 	@NotNull
 	@NotBlank
 	private String password;

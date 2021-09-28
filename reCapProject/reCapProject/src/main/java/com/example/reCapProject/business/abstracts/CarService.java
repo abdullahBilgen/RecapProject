@@ -10,7 +10,9 @@ import com.example.reCapProject.entities.request.create.CreateCarRequest;
 import com.example.reCapProject.entities.request.delete.DeleteCarRequest;
 import com.example.reCapProject.entities.request.update.UpdateCarRequest;
 
+
 public interface CarService  {
+	
 	
 	DataResult<List<Car>> getAll();
 	
@@ -22,9 +24,18 @@ public interface CarService  {
 	
 	DataResult<List<Car>> getByColorName(String colorName);
 	
+	DataResult<List<Car>> getAvailableCars();
+	
+	DataResult<List<Car>> getByCity(String city);
+	
 	Result add(CreateCarRequest createCarRequest);
 	
 	Result update(UpdateCarRequest updateCarRequest);
-	
+
 	Result delete(DeleteCarRequest deleteCarRequest);
+	
+
+
+
+
 }

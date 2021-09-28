@@ -20,6 +20,7 @@ import com.example.reCapProject.entities.request.update.UpdateColorRequest;
 @Service
 public class ColorManager implements ColorService{
 	
+
 	private ColorDao colorDao;
 	
 	@Autowired
@@ -30,32 +31,52 @@ public class ColorManager implements ColorService{
 
 	@Override
 	public Result add(CreateColorRequest createColorRequest) {
+		
 		Color color=new Color();
 		color.setColorName(createColorRequest.getColorName());
 		
 		this.colorDao.save(color);
-		return new SuccessResult(Messages.COLORADD);	
+		return new SuccessResult(Messages.COLORADD);
+		
 	}
 
 	@Override
 	public DataResult<List<Color>> getAll() {
+		
+		
 		return new SuccessDataResult<List<Color>>
-		(this.colorDao.findAll(),Messages.GETALL);
+		(this.colorDao.findAll(),Messages.COLORLIST);
+	 
 	}
 
 	@Override
 	public DataResult<Color> getById(int colorId) {
 		return new SuccessDataResult<Color> 
-		(this.colorDao.getById(colorId),Messages.GETID);
+		(this.colorDao.getById(colorId),Messages.COLORLIST);
+	
 	}
 
+	
 	@Override
 	public Result update(UpdateColorRequest updateColorRequest) {
+		
 		Color color = new Color();
 		color.setColorName(updateColorRequest.getColorName());
 		
 		this.colorDao.save(color);
 		return new SuccessResult(Messages.COLORUPDATE);
+		
+	}
+
+	@Override
+	public Result delete(DeleteColorRequest deleteColorRequest) {
+		
+		Color color = new Color();
+		color.setColorId(this.colorDao.getByColorName(deleteColorRequest.getColorName()).getColorId());
+		
+		this.colorDao.deleteById(color.getColorId());
+		return new SuccessResult(Messages.COLORDELETE);
+		
 	}
 
 	@Override
@@ -64,12 +85,5 @@ public class ColorManager implements ColorService{
 		(this.colorDao.findAll(),Messages.COLORLIST);
 	}
 	
-	@Override
-    public Result delete(DeleteColorRequest deleteColorRequest) {
-        Color color = new Color();
-        color.setColorId(this.colorDao.getByColorName(deleteColorRequest.getColorName()).getColorId());
 
-        this.colorDao.deleteById(color.getColorId());
-        return new SuccessResult(Messages.COLORDELETE);
-    }
 }

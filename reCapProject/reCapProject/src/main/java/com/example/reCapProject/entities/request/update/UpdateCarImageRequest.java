@@ -7,6 +7,7 @@ import lombok.Data;
 
 import lombok.NoArgsConstructor;
 
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -16,4 +17,6 @@ public class UpdateCarImageRequest {
 	private int carId;
 	
 	private String imagePath;
+	
+
 }

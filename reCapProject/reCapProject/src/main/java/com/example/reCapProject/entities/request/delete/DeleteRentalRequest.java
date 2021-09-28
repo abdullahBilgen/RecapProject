@@ -15,16 +15,9 @@ import lombok.Setter;
 @NoArgsConstructor
 public class DeleteRentalRequest {
 	
-	@NotNull
-	@NotBlank
-	private Date rentDate;
 	
-	private Date returnDate;
+
+	private int rentalId;
 	
-	@NotNull
-	private int carId;
-	
-	private int customerId;
-	
-	private boolean rentStatus;
+
 }

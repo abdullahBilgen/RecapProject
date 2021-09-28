@@ -38,11 +38,11 @@ public class CreditCardsController {
 		return this.creditCardService.getAll();
 	}
 
-	@GetMapping("/getbyid")
-	public DataResult<CreditCard> getById(int cardId) {
-		return this.creditCardService.getById(cardId);
+	@GetMapping("/getcreditcardbycustomerid")
+	public DataResult<CreditCard> getById(int customerId) {
+		return this.creditCardService.getById(customerId);
 	}
-
+	
 	@PostMapping("/add")
 	public Result add(@Valid @RequestBody CreateCreditCardRequest createCreditCardRequest) {
 		return this.creditCardService.add(createCreditCardRequest);
@@ -57,4 +57,5 @@ public class CreditCardsController {
 	public Result delete(DeleteCreditCardRequest deleteCreditCardRequest) {
 		return this.creditCardService.delete(deleteCreditCardRequest);
 	}
+
 }

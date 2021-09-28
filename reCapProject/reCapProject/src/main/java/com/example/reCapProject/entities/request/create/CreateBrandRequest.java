@@ -16,5 +16,6 @@ public class CreateBrandRequest {
 	
 	@NotNull
 	@NotBlank
-	private String brandName;	
+	private String brandName;
+	
 }

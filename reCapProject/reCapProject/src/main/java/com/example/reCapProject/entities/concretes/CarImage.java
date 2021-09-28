@@ -42,4 +42,5 @@ public class CarImage {
 	@ManyToOne
 	@JoinColumn(name="car_id")
 	private Car car;
+	
 }

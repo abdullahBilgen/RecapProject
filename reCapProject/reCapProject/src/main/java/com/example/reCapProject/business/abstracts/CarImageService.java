@@ -17,10 +17,16 @@ public interface CarImageService {
 	DataResult<List<CarImage>> getAll();
 	
 	DataResult <List<CarImage>>getImagesWıthCarId (int carId);
+	
 
-	Result add(CreateCarImageRequest createCarImageRequest, MultipartFile file)throws IOException;
+	Result add(CreateCarImageRequest createCarImageRequest)throws IOException;
 
 	Result update(UpdateCarImageRequest updateCarImageRequest);
 
 	Result delete(DeleteCarImageRequest deleteCarImageRequest);
+
+	
+
+	
+
 }

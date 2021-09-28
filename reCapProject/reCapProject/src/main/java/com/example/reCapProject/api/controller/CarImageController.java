@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -45,8 +46,12 @@ public class CarImageController {
 
 
 	@PostMapping("/add")
-	public Result add(@Valid CreateCarImageRequest createCarImageRequest,MultipartFile file) throws IOException {
-		return this.carImageService.add(createCarImageRequest, file);
+	public Result add(@Valid @RequestParam ("carId") int carId,MultipartFile file) throws IOException {
+		CreateCarImageRequest createCarImageRequest = new CreateCarImageRequest();
+		createCarImageRequest.setCarId(carId);
+		createCarImageRequest.setFile(file);
+			
+		return this.carImageService.add(createCarImageRequest);
 	}
 
 	@PostMapping("/update")
@@ -58,4 +63,5 @@ public class CarImageController {
 	public Result delete(DeleteCarImageRequest deleteCarImageRequest) {
 		return this.carImageService.delete(deleteCarImageRequest);
 	}
+
 }

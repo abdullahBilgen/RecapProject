@@ -18,7 +18,9 @@ import com.example.reCapProject.core.utilities.result.DataResult;
 import com.example.reCapProject.core.utilities.result.Result;
 import com.example.reCapProject.entities.concretes.Car;
 import com.example.reCapProject.entities.dtos.CarDetailDto;
-import com.example.reCapProject.entities.request.CreateCarRequest;
+import com.example.reCapProject.entities.request.create.CreateCarRequest;
+import com.example.reCapProject.entities.request.delete.DeleteCarRequest;
+import com.example.reCapProject.entities.request.update.UpdateCarRequest;
 
 @RestController
 @RequestMapping("api/cars")
@@ -53,15 +55,40 @@ public class CarsController {
 		return this.carService.getCarWithDetails();
 	}
 	
-	@PostMapping("update")
-	public Result update(Car car) {
-		return this.carService.update(car);
+	@PostMapping("/update")
+	public Result update(@Valid @RequestBody UpdateCarRequest updateCarRequest) {
+		return this.carService.update(updateCarRequest);
 	}
 
-	@PutMapping("delete")
-	public Result delete(Car car) {
-		return this.carService.delete(car);
+	@PutMapping("/delete")
+	public Result delete(DeleteCarRequest deleteCarRequest) {
+		return this.carService.delete(deleteCarRequest);
 	}
+	
+	@GetMapping("/getbybrandname")
+	public DataResult<List<Car>>  getByBrandName(String brandName ) {
+		return this.carService.getByBrandName(brandName);
+	}
+	
+	@GetMapping("/getbycolorname")
+	public DataResult<List<Car>> getByColorName(String colorName){
+		return this.carService.getByColorName(colorName);
+		
+	}
+	
+	@GetMapping("/getavailablecars")
+	public DataResult<List<Car>> getAvailableCars(){
+		return this.carService.getAvailableCars();
+		
+	}
+	
+	@GetMapping("/getbycity")
+	public DataResult<List<Car>> getByCity(String city){
+		return this.carService.getByCity(city);
+		
+	}
+	
+	
 	
 
 }

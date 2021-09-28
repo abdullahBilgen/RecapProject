@@ -2,7 +2,6 @@ package com.example.reCapProject.entities.request.update;
 
 import java.util.Date;
 
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 import lombok.AllArgsConstructor;
@@ -16,16 +15,20 @@ import lombok.Setter;
 @NoArgsConstructor
 public class UpdateRentalRequest {
 
+	private String pickUpCity;
+
+	private String deliveryCity;
 	@NotNull
-	@NotBlank
+	private int rentalId;
 	private Date rentDate;
-	
+
 	private Date returnDate;
-	
+
 	@NotNull
 	private int carId;
-	
+
 	private int customerId;
-	
-	private boolean rentStatus;
+
+	private boolean returnStatus;
+
 }

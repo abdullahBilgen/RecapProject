@@ -7,7 +7,8 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+
 public class DeleteColorRequest {
 
-	private String colorName;
+		private String colorName;
 }
