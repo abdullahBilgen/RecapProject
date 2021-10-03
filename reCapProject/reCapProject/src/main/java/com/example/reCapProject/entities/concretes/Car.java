@@ -13,6 +13,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import org.hibernate.annotations.NotFound;
+import org.hibernate.annotations.NotFoundAction;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -51,9 +54,8 @@ public class Car {
 	@Column(name="description")
 	private String description;
 	
-	@Column(name = "car_list_control",columnDefinition = "boolean default false")
-	private boolean carListControl;
 	
+
 	@ManyToOne
 	@JoinColumn(name = "brand_id")
 	private Brand brand;
@@ -78,5 +80,8 @@ public class Car {
 	
 	@OneToMany(mappedBy="car")
     private List<CarRepair> carRepair;
-
+	
+	
+	
+	
 }

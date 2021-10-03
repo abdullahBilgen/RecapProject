@@ -10,5 +10,5 @@ import lombok.NoArgsConstructor;
 
 public class DeleteColorRequest {
 
-	private String colorName;
+		private String colorName;
 }

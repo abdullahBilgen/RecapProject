@@ -12,4 +12,5 @@ public interface ApplicationUserDao extends JpaRepository<ApplicationUser, Integ
 
 	ApplicationUser getByEmail(String email);
 	
+
 }

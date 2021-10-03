@@ -32,4 +32,7 @@ public class UpdateIndividualCustomerRequest {
 	@NotNull
 	@NotBlank
 	private String password;
+
+	
+
 }

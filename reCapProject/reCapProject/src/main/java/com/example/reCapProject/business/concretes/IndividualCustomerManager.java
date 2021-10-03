@@ -40,6 +40,7 @@ public class IndividualCustomerManager implements IndividualCustomerService {
 		individualCustomer.setIdentityNumber(createIndividualCustomerRequest.getIdentityNumber());
 		this.individualCustomerDao.save(individualCustomer);
 		return new SuccessResult(Messages.CUSTOMERADD);
+
 	}
 
 	@Override
@@ -72,4 +73,5 @@ public class IndividualCustomerManager implements IndividualCustomerService {
 		return new SuccessDataResult<List<IndividualCustomer>>(this.individualCustomerDao.findAll(),
 				Messages.CUSTOMERLIST);
 	}
+
 }

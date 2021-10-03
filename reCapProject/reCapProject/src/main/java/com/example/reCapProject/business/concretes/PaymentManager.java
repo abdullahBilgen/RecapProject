@@ -17,7 +17,6 @@ import com.example.reCapProject.entities.concretes.Rental;
 import com.example.reCapProject.entities.request.create.CreatePaymentRequest;
 import com.example.reCapProject.entities.request.delete.DeletePaymentRequest;
 import com.example.reCapProject.entities.request.update.UpdatePaymentRequest;
-
 @Service
 public class PaymentManager implements PaymentService {
 	
@@ -25,12 +24,15 @@ private PaymentDao paymentDao;
 private CreditCardValidatorService creditCardValidatorService;
 private CreditCardDao creditCardDao;
 	
+	
 	@Autowired
 	public PaymentManager(PaymentDao paymentDao,CreditCardDao creditCardDao, CreditCardValidatorService creditCardValidatorService) {
 		super();
 		this.paymentDao = paymentDao;
 		this.creditCardValidatorService=creditCardValidatorService;
 		this.creditCardDao=creditCardDao;
+	
+		
 	}
 
 	@Override
@@ -55,28 +57,13 @@ private CreditCardDao creditCardDao;
 		return new SuccessResult();
 	}
 
-	@Override
-	public Result update(UpdatePaymentRequest updatePaymentRequest) {
-		
-		CreditCard creditCard = new CreditCard();
-		creditCard.setCardId(updatePaymentRequest.getCreditId());
-		
-		Rental rental = new Rental();
-		rental.setRentalId(updatePaymentRequest.getRentalId());
-	
-		Payment payment = new Payment();
-		payment.setCreditCard(creditCard);
-		payment.setRental(rental);
-		
-		this.paymentDao.save(payment);
-		return new SuccessResult();
-	}
 
-	@Override
-	public Result delete(DeletePaymentRequest deletePaymentRequest) {
-		Payment payment = this.paymentDao.getById(deletePaymentRequest.getPaymentId());
-		
-		this.paymentDao.delete(payment);
-		return new SuccessResult();
-	}
+	
+	 
+
+	
+	
+
+	
+
 }

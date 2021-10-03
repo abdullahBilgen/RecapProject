@@ -24,6 +24,7 @@ import lombok.NoArgsConstructor;
 @Table(name="colors")
 @Entity
 
+
 public class Color {
 	
 	@Id
@@ -38,4 +39,5 @@ public class Color {
 	@OneToMany(mappedBy = "color")
 	private List<Car> cars;
 	
+
 }

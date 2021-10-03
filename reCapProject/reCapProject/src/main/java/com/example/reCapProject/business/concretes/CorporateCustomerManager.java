@@ -25,6 +25,7 @@ public class CorporateCustomerManager implements CorporateCustomerService {
 	private CustomerDao customerDao;
 	private CorporateCustomerDao corporateCustomerDao;
 	
+	
 	@Autowired
 	public CorporateCustomerManager(CorporateCustomerDao corporateCustomerDao,CustomerDao customerDao) {
 		super();

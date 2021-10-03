@@ -59,4 +59,5 @@ public class RentalsController {
 		return this.rentalService.updateCorporateCustomer(updateRentalRequest);
 
 	}
+
 }

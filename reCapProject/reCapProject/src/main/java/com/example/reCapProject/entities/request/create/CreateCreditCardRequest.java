@@ -30,5 +30,6 @@ public class CreateCreditCardRequest {
 	private Date pullDate;
 	
 	private int customerId;
+	
 
 }

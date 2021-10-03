@@ -8,11 +8,13 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UpdatePaymentRequest {
+	
 
 	private int creditId;
 	
 	private int rentalId;
 	
 	private int paymentId;
+
 
 }

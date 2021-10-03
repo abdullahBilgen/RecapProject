@@ -22,5 +22,17 @@ public interface RentalService {
 	
 	Result updateCorporateCustomer(UpdateRentalRequest updateRentalRequest);
 	Result updateIndividualCustomer(UpdateRentalRequest updateRentalRequest);
+	
+	
+
+
+	
+	
+	
+	
+	
+
+	
+
 
 }

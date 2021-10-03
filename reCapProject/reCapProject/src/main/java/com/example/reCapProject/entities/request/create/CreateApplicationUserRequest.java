@@ -16,14 +16,17 @@ public class CreateApplicationUserRequest {
 	@NotNull
 	@NotBlank
 	private String firstName;
+	
 
 	@NotNull
 	@NotBlank
 	private String lastName;
 	
+
 	@NotNull
 	@NotBlank
 	private String email;
+	
 
 	@NotNull
 	@NotBlank

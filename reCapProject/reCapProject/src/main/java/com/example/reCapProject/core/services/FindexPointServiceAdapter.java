@@ -22,4 +22,9 @@ public class FindexPointServiceAdapter implements AllFindexPointCheckService{
 		FindexPointService findexPointService= new FindexPointService();
 		return findexPointService.individualCustomerFindexPoint(individualCustomer.getIdentityNumber());
 	}
+
+
+		
+
+	
 }

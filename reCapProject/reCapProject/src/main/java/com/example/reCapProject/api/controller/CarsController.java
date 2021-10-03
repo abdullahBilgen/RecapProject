@@ -50,6 +50,7 @@ public class CarsController {
 		return this.carService.add(createCarRequest);
 	}
 	
+	
 	@GetMapping("/getcarwithdetails")
 	public DataResult<List<CarDetailDto>>getCarWithDetails() {
 		return this.carService.getCarWithDetails();
@@ -73,15 +74,22 @@ public class CarsController {
 	@GetMapping("/getbycolorıd")
 	public DataResult<List<Car>> getByColorId(int colorId){
 		return this.carService.getByColorId(colorId);
+		
 	}
 	
 	@GetMapping("/getavailablecars")
 	public DataResult<List<Car>> getAvailableCars(){
 		return this.carService.getAvailableCars();
+		
 	}
 	
 	@GetMapping("/getbycity")
 	public DataResult<List<Car>> getByCity(String city){
 		return this.carService.getByCity(city);
+		
 	}
+	
+	
+	
+
 }

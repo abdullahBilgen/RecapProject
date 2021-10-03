@@ -50,12 +50,17 @@ public class CarImageController {
 		CreateCarImageRequest createCarImageRequest = new CreateCarImageRequest();
 		createCarImageRequest.setCarId(carId);
 		createCarImageRequest.setFile(file);
+		
 			
 		return this.carImageService.add(createCarImageRequest);
 	}
 
 	@PostMapping("/update")
-	public Result update(UpdateCarImageRequest updateCarImageRequest) {
+	public Result update(@Valid @RequestParam ("carId") int carId, @RequestParam ("imageId") int imageId, MultipartFile file) throws IOException{
+		UpdateCarImageRequest updateCarImageRequest = new UpdateCarImageRequest();
+		updateCarImageRequest.setCarId(carId);
+		updateCarImageRequest.setFile(file);
+		updateCarImageRequest.setImageId(imageId);
 		return this.carImageService.update(updateCarImageRequest);
 	}
 
@@ -63,4 +68,5 @@ public class CarImageController {
 	public Result delete(DeleteCarImageRequest deleteCarImageRequest) {
 		return this.carImageService.delete(deleteCarImageRequest);
 	}
+
 }

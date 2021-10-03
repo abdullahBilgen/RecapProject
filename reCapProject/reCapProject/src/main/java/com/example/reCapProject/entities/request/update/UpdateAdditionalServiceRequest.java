@@ -1,8 +1,4 @@
 package com.example.reCapProject.entities.request.update;
-
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,12 +6,17 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UpdateBrandRequest {
+public class UpdateAdditionalServiceRequest {
 	
-	private int brandId;
+private int additionalId;
 	
-	@NotNull
-	@NotBlank
-	private String brandName;
+	
+	private String additionalDescription;
+	
+	
+	private double additionalPrice;
+	
+	
+	private String additionalName;
 
 }

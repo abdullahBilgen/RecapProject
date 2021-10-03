@@ -17,6 +17,8 @@ public class CreatePosRequest {
 	
 	private Date pullDate;
 	
-	private double price;
 	
+	
+	
+
 }

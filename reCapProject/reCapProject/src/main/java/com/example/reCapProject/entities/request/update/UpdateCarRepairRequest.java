@@ -2,6 +2,7 @@ package com.example.reCapProject.entities.request.update;
 
 import java.util.Date;
 
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 import lombok.AllArgsConstructor;

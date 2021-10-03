@@ -46,7 +46,7 @@ public class Invoice {
 	private Date invoiceDate;
 	
 	@Column(name="invoice_amount")
-	private String invoiceAmount;
+	private double invoiceAmount;
 	
 	@JsonIgnore
 	@OneToOne
@@ -57,5 +57,7 @@ public class Invoice {
 	@ManyToOne
 	@JoinColumn(name="customer_id")
 	private Customer customer;
+	
+	
 
 }

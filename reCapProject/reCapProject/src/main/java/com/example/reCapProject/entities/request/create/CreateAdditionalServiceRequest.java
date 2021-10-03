@@ -7,10 +7,13 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class CreateCarDamageRequest {
+public class CreateAdditionalServiceRequest {
 	
-	private int carId;
 	
-	private String damageDescription;
+	private String additionalDescription;
+	
+	private double additionalPrice;
+
+	private String additionalName;
 
 }

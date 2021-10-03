@@ -1,5 +1,8 @@
 package com.example.reCapProject.entities.request.create;
 
+
+import java.util.Date;
+
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
@@ -30,5 +33,10 @@ public class CreateIndividualCustomerRequest {
 	@NotNull
 	@NotBlank
 	private String password;
+	
+	
+	
+	
+	
 
 }

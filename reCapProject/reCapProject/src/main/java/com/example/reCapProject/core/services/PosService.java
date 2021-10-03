@@ -7,4 +7,5 @@ public class PosService {
 	public boolean posServiceVerification(String cvc, String cardNumber, Date pullDate) {
         return true;
     }
+
 }

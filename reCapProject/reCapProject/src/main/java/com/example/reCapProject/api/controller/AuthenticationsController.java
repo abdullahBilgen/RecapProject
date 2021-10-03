@@ -23,5 +23,7 @@ public class AuthenticationsController {
 	@PostMapping("/logIn")
 	public Result logIn(CreateLoginRequest createLoginRequest) {
 		return this.authenticationService.logIn(createLoginRequest);
+		
 	}
+
 }

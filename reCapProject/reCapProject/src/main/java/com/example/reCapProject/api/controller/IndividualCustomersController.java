@@ -15,9 +15,13 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.reCapProject.business.abstracts.IndividualCustomerService;
 import com.example.reCapProject.core.utilities.result.DataResult;
 import com.example.reCapProject.core.utilities.result.Result;
+import com.example.reCapProject.entities.concretes.CorporateCustomer;
 import com.example.reCapProject.entities.concretes.IndividualCustomer;
+import com.example.reCapProject.entities.request.create.CreateCorporateCustomerRequest;
 import com.example.reCapProject.entities.request.create.CreateIndividualCustomerRequest;
+import com.example.reCapProject.entities.request.delete.DeleteCorporateCustomerRequest;
 import com.example.reCapProject.entities.request.delete.DeleteIndividualCustomerRequest;
+import com.example.reCapProject.entities.request.update.UpdateCorporateCustomerRequest;
 import com.example.reCapProject.entities.request.update.UpdateIndividualCustomerRequest;
 
 @RestController
@@ -52,5 +56,6 @@ public class IndividualCustomersController {
 	public Result delete(DeleteIndividualCustomerRequest deleteIndividualCustomerRequest) {
 		return this.individualCustomerService.delete(deleteIndividualCustomerRequest);
 	}
+
 
 }

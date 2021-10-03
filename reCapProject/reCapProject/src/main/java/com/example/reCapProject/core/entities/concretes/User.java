@@ -10,6 +10,7 @@ import javax.persistence.MappedSuperclass;
 
 import lombok.Data;
 
+
 @Data
 @MappedSuperclass
 public class User {
@@ -19,10 +20,12 @@ public class User {
 	@Column(name="user_id")
 	private int userId;
 	
+	
 	@Column(name="email")
 	private String email;
 	
 	@Column(name="password")
 	private String password;
 	
+
 }

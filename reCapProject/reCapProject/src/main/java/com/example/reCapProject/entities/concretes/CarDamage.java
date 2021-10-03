@@ -28,11 +28,13 @@ public class CarDamage {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="car_damages_id")
 	private int carDamagesId;
-	
 	@Column(name="damage_description")
 	private String damageDescription;
 	
 	@ManyToOne
 	@JoinColumn(name="car_id")
 	private Car car;
+	
+	
+
 }

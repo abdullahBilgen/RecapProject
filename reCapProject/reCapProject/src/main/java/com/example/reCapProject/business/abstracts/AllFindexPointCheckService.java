@@ -8,4 +8,5 @@ public interface AllFindexPointCheckService {
  int checkCorporateCustomerFindexPoint(CorporateCustomer corporateCustomer);
  int checkIndividualCustomerFindexPoint(IndividualCustomer individualCustomer);
 	
+
 }

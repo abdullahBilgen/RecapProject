@@ -1,9 +1,11 @@
 package com.example.reCapProject.entities.abstracts;
 
+
 import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
 import com.example.reCapProject.entities.concretes.ApplicationUser;
@@ -29,6 +31,7 @@ import lombok.NoArgsConstructor;
 
 public class Customer extends ApplicationUser {
 	
+	
 	@JsonIgnore
 	@OneToMany(mappedBy="customer")
 	private List<CreditCard> creditCards;
@@ -40,6 +43,9 @@ public class Customer extends ApplicationUser {
     @JsonIgnore
     @OneToMany(mappedBy = "customer")
     private List<Invoice> invoices;
- 
+    
+
+   
+    
 
 }

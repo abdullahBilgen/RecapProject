@@ -14,7 +14,9 @@ import com.example.reCapProject.core.utilities.result.DataResult;
 import com.example.reCapProject.core.utilities.result.Result;
 import com.example.reCapProject.entities.concretes.Payment;
 import com.example.reCapProject.entities.request.create.CreatePaymentRequest;
+
 import com.example.reCapProject.entities.request.delete.DeletePaymentRequest;
+
 import com.example.reCapProject.entities.request.update.UpdatePaymentRequest;
 
 @RestController
@@ -34,17 +36,9 @@ public class PaymentController {
 	}
 	
 	@GetMapping("/getbyid")
-    public DataResult<Payment> getById(int paymentId) {
-        return this.paymentService.getById(paymentId);
-    }
+	public DataResult<Payment> getById(int paymentId) {
+		return this.paymentService.getById(paymentId);
+	}
 	
-	@PostMapping("/update")
-    public Result update(@Valid @RequestBody UpdatePaymentRequest updatePaymentRequest) {
-        return this.paymentService.update(updatePaymentRequest);
-    }
 
-    @PutMapping("/delete")
-    public Result delete(DeletePaymentRequest deletePaymentRequest) {
-        return this.paymentService.delete(deletePaymentRequest);
-    }
 }

@@ -27,4 +27,6 @@ public class CorporateCustomer extends Customer{
 	@Column(name="company_name")
 	private String companyName;
 
+	
+	
 }

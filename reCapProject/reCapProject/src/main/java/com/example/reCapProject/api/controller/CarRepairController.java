@@ -15,10 +15,15 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.reCapProject.business.abstracts.CarRepairService;
 import com.example.reCapProject.core.utilities.result.DataResult;
 import com.example.reCapProject.core.utilities.result.Result;
+
 import com.example.reCapProject.entities.concretes.CarRepair;
+import com.example.reCapProject.entities.dtos.CarDetailDto;
 import com.example.reCapProject.entities.request.create.CreateCarRepairRequest;
+import com.example.reCapProject.entities.request.create.CreateCarRequest;
 import com.example.reCapProject.entities.request.delete.DeleteCarRepairRequest;
+import com.example.reCapProject.entities.request.delete.DeleteCarRequest;
 import com.example.reCapProject.entities.request.update.UpdateCarRepairRequest;
+import com.example.reCapProject.entities.request.update.UpdateCarRequest;
 
 @RestController
 @RequestMapping("api/car_repairs")
@@ -57,4 +62,7 @@ public class CarRepairController {
 	public Result delete(DeleteCarRepairRequest deleteCarRepairRequest) {
 		return this.carRepairService.delete(deleteCarRepairRequest);
 	}
+	
+	
+
 }

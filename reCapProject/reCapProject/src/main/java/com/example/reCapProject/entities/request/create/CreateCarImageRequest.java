@@ -18,7 +18,13 @@ public class CreateCarImageRequest {
 	@NotNull
 	private int carId;
 	
+	private String imageName;
+	
 	@JsonIgnore
 	private MultipartFile file;
+	
+	
+	
+	
 
 }

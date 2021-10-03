@@ -56,4 +56,5 @@ public class BrandsController {
 	public Result delete(DeleteBrandRequest deleteBrandRequest) {
 		return this.brandService.delete(deleteBrandRequest);
 	}
+
 }

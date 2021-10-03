@@ -51,4 +51,5 @@ public class CorporateCustomersController {
 	public Result delete(DeleteCorporateCustomerRequest deleteCorporateCustomerRequest) {
 		return this.corporateCustomerService.delete(deleteCorporateCustomerRequest);
 	}
+
 }

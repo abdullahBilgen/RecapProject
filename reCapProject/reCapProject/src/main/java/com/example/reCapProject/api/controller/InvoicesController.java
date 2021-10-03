@@ -18,9 +18,14 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.reCapProject.business.abstracts.InvoiceService;
 import com.example.reCapProject.core.utilities.result.DataResult;
 import com.example.reCapProject.core.utilities.result.Result;
+import com.example.reCapProject.entities.concretes.Car;
 import com.example.reCapProject.entities.concretes.Invoice;
+import com.example.reCapProject.entities.dtos.CarDetailDto;
+import com.example.reCapProject.entities.request.create.CreateCarRequest;
 import com.example.reCapProject.entities.request.create.CreateInvoiceRequest;
+import com.example.reCapProject.entities.request.delete.DeleteCarRequest;
 import com.example.reCapProject.entities.request.delete.DeleteInvoiceRequest;
+import com.example.reCapProject.entities.request.update.UpdateCarRequest;
 import com.example.reCapProject.entities.request.update.UpdateInvoiceRequest;
 
 @RestController
@@ -45,6 +50,7 @@ public class InvoicesController {
 		return this.invoiceService.getByCustomer_Id(customerId);
 	}
 	
+	
 	@GetMapping("/findinvoicesbetweentwodate")
 	public DataResult<List<Invoice>> findInvoicesBetweenTwoDate(@RequestParam("endDate") @DateTimeFormat(pattern = "yyyy-MM-dd")
 	Date endDate,@RequestParam("startDate") @DateTimeFormat(pattern = "yyyy-MM-dd") Date startDate) {
@@ -52,6 +58,7 @@ public class InvoicesController {
 	System.out.println(endDate.toString()+startDate.toString());
 		return this.invoiceService.getByInvoicesAllDate(endDate,startDate);
 	}
+	
 	
 	@PostMapping("/add")
 	public Result add(@Valid @RequestBody CreateInvoiceRequest createInvoiceRequest) {
@@ -67,4 +74,10 @@ public class InvoicesController {
 	public Result delete(DeleteInvoiceRequest deleteInvoiceRequest) {
 		return this.invoiceService.delete(deleteInvoiceRequest);
 	}
+	
+	
+	
+	
+	
+
 }

@@ -1,5 +1,7 @@
 package com.example.reCapProject.entities.concretes;
 
+
+
 import java.util.Date;
 
 import javax.persistence.Column;
@@ -29,13 +31,10 @@ public class CreditCard {
 	@GeneratedValue
 	@Column(name="credit_id")
 	private int cardId;
-	
 	@Column(name="card_name")
 	private String cardName;
-	
 	@Column(name="card_number")
 	private String cardNumber;
-	
 	@Column(name="cvc")
 	private String cvc;
 	

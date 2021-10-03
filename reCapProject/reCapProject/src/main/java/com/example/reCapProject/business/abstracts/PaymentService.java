@@ -13,8 +13,5 @@ public interface PaymentService {
 
 	Result add(CreatePaymentRequest createPaymentRequest);
 	
-	Result update(UpdatePaymentRequest updatePaymentRequest);
 	
-	Result delete(DeletePaymentRequest deletePaymentRequest);
-
 }

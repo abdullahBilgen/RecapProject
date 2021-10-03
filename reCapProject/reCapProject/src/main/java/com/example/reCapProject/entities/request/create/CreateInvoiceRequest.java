@@ -15,14 +15,11 @@ public class CreateInvoiceRequest {
 
 	@JsonIgnore
 	private Date rentDate;
-	
 	private Date returnDate;
 	
 	private Date invoiceDate;
-	
 	private String invoiceNumber;
-	
-	private String invoiceAmount;
+	private double invoiceAmount;
 
 	@JsonIgnore
 	private Long totalRentDay;

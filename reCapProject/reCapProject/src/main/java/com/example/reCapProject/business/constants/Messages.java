@@ -12,17 +12,20 @@ public class Messages {
 	public static final String INVOICEDELETE = "invoice deleted.";
 	public static final String INVOICELIST = "invoice listed.";
 	
+
 	public static final String BRANDADD = "Brand added.";
 	public static final String BRANDUPDATE = "Brand updated.";
 	public static final String BRANDDELETE = "Brand deleted.";
 	public static final String BRANDLIST = "Brands listed.";
 
+	
 	public static final String CARREPAIRRENTERROR = "Araba bakımdan çıktı kiralanabilir.";
 	public static final String REPAIRUPDATE = "Repair updated.";
 	public static final String REPAIRADD = "Repair added.";
 	public static final String REPAIRDELETE = "Repair deleted.";
 	public static final String REPAIRLIST = "Repair listed.";
 	public static final String REPAIRID = "Repair listed with ıd.";
+
 
 	public static final String COLORADD = "Color added.";
 	public static final String COLORUPDATE = "Color updated.";
@@ -72,6 +75,7 @@ public class Messages {
 
 	public static final String ERROR = "HATA";
 	public static final String SUCCESS = "BAŞARILI";
+
 
 	public static final String REQUIRED = "required";
 	public static final String SIZE = "size must be between {min} and {max}";

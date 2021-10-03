@@ -20,6 +20,7 @@ import com.example.reCapProject.entities.request.update.UpdateCarDamageRequest;
 
 @Service
 public class CarDamageManager implements CarDamageService{
+
 	
 	private CarDamageDao carDamageDao;
 	private CarDao carDao;
@@ -75,5 +76,8 @@ public class CarDamageManager implements CarDamageService{
 		this.carDamageDao.delete(carDamage);
 		
 		return new SuccessResult();
+		
+		
 	}
+
 }

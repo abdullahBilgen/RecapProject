@@ -11,6 +11,7 @@ import com.example.reCapProject.entities.request.update.UpdateIndividualCustomer
 
 public interface IndividualCustomerService {
 	
+	
 	Result add(CreateIndividualCustomerRequest createIndividualCustomerRequest);
 
 	Result update(UpdateIndividualCustomerRequest updateIndividualCustomerRequest);

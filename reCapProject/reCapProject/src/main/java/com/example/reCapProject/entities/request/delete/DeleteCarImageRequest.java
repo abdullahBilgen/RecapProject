@@ -18,4 +18,5 @@ public class DeleteCarImageRequest {
 	
 	@NotNull
 	private int imageId;
+
 }

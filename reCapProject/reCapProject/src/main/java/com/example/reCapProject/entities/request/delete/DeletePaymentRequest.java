@@ -11,4 +11,5 @@ public class DeletePaymentRequest {
 	
 	private int paymentId;
 	
+
 }

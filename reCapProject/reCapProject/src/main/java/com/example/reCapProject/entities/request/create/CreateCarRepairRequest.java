@@ -2,9 +2,11 @@ package com.example.reCapProject.entities.request.create;
 
 import java.util.Date;
 
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -23,5 +25,7 @@ public class CreateCarRepairRequest {
 	
 	@NotNull
 	private Date repairDate;
+	
+
 
 }

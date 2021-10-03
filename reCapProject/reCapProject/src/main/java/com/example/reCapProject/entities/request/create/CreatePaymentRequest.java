@@ -12,4 +12,6 @@ public class CreatePaymentRequest {
 	private int creditId;
 	
 	private int rentalId;
+
+
 }

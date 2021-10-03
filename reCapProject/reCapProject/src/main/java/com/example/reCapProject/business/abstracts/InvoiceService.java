@@ -18,10 +18,10 @@ public interface InvoiceService {
 	
 	Result update(UpdateInvoiceRequest updaInvoiceRequest);
 	
+	
 	DataResult<List<Invoice>> getAll();
-	
 	DataResult<List<Invoice>> getByCustomer_Id(int customerId);
-	
 	DataResult<List<Invoice>> getByInvoicesAllDate(Date startDate, Date endDate);
 	
+
 }

@@ -5,6 +5,7 @@ import java.util.List;
 import com.example.reCapProject.core.utilities.result.DataResult;
 import com.example.reCapProject.core.utilities.result.Result;
 import com.example.reCapProject.entities.concretes.Car;
+import com.example.reCapProject.entities.concretes.Color;
 import com.example.reCapProject.entities.dtos.CarDetailDto;
 import com.example.reCapProject.entities.request.create.CreateCarRequest;
 import com.example.reCapProject.entities.request.delete.DeleteCarRequest;
@@ -12,6 +13,7 @@ import com.example.reCapProject.entities.request.update.UpdateCarRequest;
 
 
 public interface CarService  {
+	
 	
 	DataResult<List<Car>> getAll();
 	
@@ -33,4 +35,8 @@ public interface CarService  {
 
 	Result delete(DeleteCarRequest deleteCarRequest);
 	
+
+
+
+
 }

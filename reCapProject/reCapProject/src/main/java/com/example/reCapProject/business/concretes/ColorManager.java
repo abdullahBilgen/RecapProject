@@ -20,6 +20,7 @@ import com.example.reCapProject.entities.request.update.UpdateColorRequest;
 @Service
 public class ColorManager implements ColorService{
 	
+
 	private ColorDao colorDao;
 	
 	@Autowired
@@ -36,13 +37,16 @@ public class ColorManager implements ColorService{
 		
 		this.colorDao.save(color);
 		return new SuccessResult(Messages.COLORADD);
+		
 	}
 
 	@Override
 	public DataResult<List<Color>> getAll() {
 		
+		
 		return new SuccessDataResult<List<Color>>
 		(this.colorDao.findAll(),Messages.COLORLIST);
+	 
 	}
 
 	@Override
@@ -51,6 +55,7 @@ public class ColorManager implements ColorService{
 		(this.colorDao.getById(colorId),Messages.COLORLIST);
 	
 	}
+
 	
 	@Override
 	public Result update(UpdateColorRequest updateColorRequest) {
@@ -60,6 +65,7 @@ public class ColorManager implements ColorService{
 		
 		this.colorDao.save(color);
 		return new SuccessResult(Messages.COLORUPDATE);
+		
 	}
 
 	@Override
@@ -70,6 +76,7 @@ public class ColorManager implements ColorService{
 		
 		this.colorDao.deleteById(color.getColorId());
 		return new SuccessResult(Messages.COLORDELETE);
+		
 	}
 
 	@Override
@@ -77,4 +84,6 @@ public class ColorManager implements ColorService{
 		return new SuccessDataResult<List<Color>>
 		(this.colorDao.findAll(),Messages.COLORLIST);
 	}
+	
+
 }

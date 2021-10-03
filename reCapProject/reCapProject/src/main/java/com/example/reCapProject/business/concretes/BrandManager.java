@@ -22,6 +22,7 @@ import com.example.reCapProject.entities.request.update.UpdateBrandRequest;
 @Service
 public class BrandManager implements BrandService{
 	
+	
 	private BrandDao brandDao;
 	
 	@Autowired
@@ -40,6 +41,7 @@ public class BrandManager implements BrandService{
 	public DataResult<Brand> getById(int brandId) {
 		return new SuccessDataResult<Brand>
 		(this.brandDao.getById(brandId),Messages.BRANDLIST);
+		
 	
 	}
 
@@ -95,4 +97,5 @@ public class BrandManager implements BrandService{
 
 		return new SuccessResult(Messages.SUCCESS);
 	}
+
 }

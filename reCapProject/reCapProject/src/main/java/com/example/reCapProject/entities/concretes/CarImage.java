@@ -34,6 +34,10 @@ public class CarImage {
 	@Column(name="image_path")
 	private String imagePath;
 	
+	@Column(name="image_name")
+	private String imageName;
+	
+	
 	@Column(name="date")
 	private LocalDate date;
 	

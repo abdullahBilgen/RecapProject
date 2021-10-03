@@ -29,9 +29,9 @@ public class UpdateCarRequest {
 	private String description;
 	
 	private int carId;
-	
 	private int brandId;
 
 	private int colorId;
+	
 	
 }

@@ -18,6 +18,7 @@ public class ApplicationUsersController {
 	@Autowired
 	private ApplicationUserService applicationUserService;
 	
+	
 	public ApplicationUsersController(ApplicationUserService applicationUserService) {
 		
 		this.applicationUserService=applicationUserService;
@@ -26,5 +27,7 @@ public class ApplicationUsersController {
 	@GetMapping("/getall")
 	public DataResult<List<ApplicationUser>> getAll() {
 		return this.applicationUserService.getAll();
+		
 	}
+
 }

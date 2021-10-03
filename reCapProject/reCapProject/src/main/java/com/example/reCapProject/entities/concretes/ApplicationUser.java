@@ -17,4 +17,8 @@ import lombok.EqualsAndHashCode;
 @Table(name = "users")
 public class ApplicationUser extends User{
 	
+	
+	
+	
+
 }

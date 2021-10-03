@@ -30,6 +30,7 @@ public class CarManager implements CarService {
 	public CarManager(CarDao carDao, CarImageDao carImageDao) {
 		super();
 		this.carDao = carDao;
+
 	}
 
 	@Override
@@ -119,6 +120,7 @@ public class CarManager implements CarService {
 		return new SuccessDataResult<List<Car>>(this.carDao.getByColor_ColorId(colorId), Messages.CARLIST);
 	}
 	
+
 	@Override
 	public DataResult<List<Car>> getAvailableCars() {
 		
@@ -137,4 +139,8 @@ public class CarManager implements CarService {
 		List<Car>cars = this.carDao.getByCity(city);
 		return new SuccessDataResult<List<Car>>(cars,Messages.CARLIST);
 	}
+
+	
+
+	
 }

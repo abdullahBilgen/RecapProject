@@ -88,7 +88,9 @@ public class CarRepairManager implements CarRepairService {
 		this.carRepairDao.save(carRepair);
 
 		return new SuccessResult(Messages.REPAIRUPDATE);
+
 		
+
 	}
 
 	@Override
@@ -99,6 +101,7 @@ public class CarRepairManager implements CarRepairService {
 		return new SuccessResult(Messages.REPAIRDELETE);
 		
 	}
+	
 
 	private Result checkIfCarRented(int carId) {
 
